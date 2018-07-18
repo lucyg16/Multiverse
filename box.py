@@ -4,7 +4,7 @@ from mpl_toolkits.mplot3d import Axes3D
 from collections import OrderedDict
 from  matplotlib import pyplot as plt
 import numpy as np
-import csv
+import csv 
 
 # create dictionary to add lists of values to
 indexValues = {}
