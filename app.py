@@ -43,11 +43,6 @@ for item in data_input2:
 	for i in range(len(item)):
 		item[i] = item[i].replace(" ","")
 
-print (data_input)
-print (data_input2)
-
-################
-
 n = len(data_input[0])
 
 data_input  = np.array(data_input, dtype=np.float_)
@@ -58,8 +53,6 @@ fig, axs = plt.subplots(n, n, subplot_kw={'projection': '3d'})
 for rowid in range(n):
 	for colid in range(n):
 		if (rowid == colid):
-			print ('Hello')
-
 			#iterate through list of given data to add to dictionary indexValues
 			for i in range(len(data_input)):
 			    if data_input[i][rowid] in indexValues:
@@ -98,7 +91,6 @@ for rowid in range(n):
 			axs[rowid][colid].boxplot(all_data, positions=x_values_keys)
 
 		elif (rowid < colid):
-			print(data_input[:,rowid].shape, data_input[:,colid].shape, data_input2.shape)
 			axs[rowid][colid].plot_trisurf(data_input[:,rowid], data_input[:,colid], data_input2, linewidth=0.2, antialiased=True)
 
 plt.show()
