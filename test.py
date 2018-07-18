@@ -1,8 +1,8 @@
-import importlib
-import matplotlib #version 1.3.1
-# importlib.import_module('mpl_toolkits.mplot3d').Axes3D
+import mpl_toolkits
 from mpl_toolkits.mplot3d import Axes3D
-import matplotlib.pyplot as plt
+
+from collections import OrderedDict
+from  matplotlib import pyplot as plt
 import numpy as np
 import csv
 
@@ -38,6 +38,9 @@ for item in data_input2:
 
 n = len(data_input[0])
 
+data_input  = np.array(data_input, dtype=np.float_)
+data_input2 = np.array(data_input2, dtype=np.float_).flatten()
+
 fig, axs = plt.subplots(n, n, subplot_kw={'projection': '3d'})
 
 for rowid in range(n):
@@ -45,7 +48,8 @@ for rowid in range(n):
 		if (rowid == colid):
 			print ('Hello')
 		elif (rowid < colid):
-			axs[rowid*n + coldid].plot_trisurf(data_input[:,rowid], data_input[:,colid], data_input2, linewidth=0.2, antialiased=True)
+			print(data_input[:,rowid].shape, data_input[:,colid].shape, data_input2.shape)
+			axs[rowid][colid].plot_trisurf(data_input[:,rowid], data_input[:,colid], data_input2, linewidth=0.2, antialiased=True)
 
 plt.show()
 
