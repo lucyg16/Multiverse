@@ -1,15 +1,11 @@
+import mpl_toolkits
+from mpl_toolkits.mplot3d import Axes3D
 
 from collections import OrderedDict
 from  matplotlib import pyplot as plt
 import numpy as np
 import csv
 
-# import importlib
-# importlib.import_module('mpl_toolkits').__path__
-
-# import mpl_toolkits
-# from mpl_toolkits.mplot3d import Axes3D
-#####################
 
 # READ DATA AND Z
 

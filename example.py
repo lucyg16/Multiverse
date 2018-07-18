@@ -1,10 +1,7 @@
-import importlib
-from importlib import import_module
-importlib.import_module('mpl_toolkits.mplot3d').Axes3D
-
+import mpl_toolkits
 from mpl_toolkits.mplot3d import Axes3D
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 n_radii = 8
