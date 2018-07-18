@@ -59,6 +59,44 @@ for rowid in range(n):
 	for colid in range(n):
 		if (rowid == colid):
 			print ('Hello')
+
+			#iterate through list of given data to add to dictionary indexValues
+			for i in range(len(data_input)):
+			    if data_input[i][rowid] in indexValues:
+			        # append the corresponding value over in the other matrix
+			        indexValues[data_input[i][rowid]].append(data_input2[i])
+			    else:
+			        #add the value to the list with identifier j[d] in the dictionary
+			        indexValues[data_input[i][rowid]] = [data_input2[i]]
+
+			# create ordered dictionary to sort indexValues with
+			sorted_indexValues = OrderedDict()
+
+			#sort indexValues
+			for key in sorted(indexValues.iterkeys()):
+			    sorted_indexValues[key]= indexValues[key]
+
+			#create empty array to store arrays of data to plot
+			all_data = []
+
+			#convert all values in the dictionary from string to int
+			for key in sorted_indexValues:
+
+			    #flat list from list of lists
+			    flat_list = []
+			    for item in sorted_indexValues[key]:
+			       flat_list.append(item)
+
+			    all_data.append(flat_list)
+
+			#create list for keys
+			x_values_keys = []
+			for key in sorted_indexValues:
+			    x_values_keys.append(int(key))
+
+			# plt.boxplot(all_data)
+			axs[rowid][colid].boxplot(all_data, positions=x_values_keys)
+
 		elif (rowid < colid):
 			print(data_input[:,rowid].shape, data_input[:,colid].shape, data_input2.shape)
 			axs[rowid][colid].plot_trisurf(data_input[:,rowid], data_input[:,colid], data_input2, linewidth=0.2, antialiased=True)
