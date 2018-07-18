@@ -59,9 +59,9 @@ for rowid in range(n):
 	for colid in range(n):
 		if (rowid == colid):
 			print ('Hello')
-		elif (rowid < colid):
-			print(data_input[:,rowid].shape, data_input[:,colid].shape, data_input2.shape)
-			axs[rowid][colid].plot_trisurf(data_input[:,rowid], data_input[:,colid], data_input2, linewidth=0.2, antialiased=True)
+		# elif (rowid < colid):
+		# 	print(data_input[:,rowid].shape, data_input[:,colid].shape, data_input2.shape)
+		# 	axs[rowid][colid].plot_trisurf(data_input[:,rowid], data_input[:,colid], data_input2, linewidth=0.2, antialiased=True)
 
 plt.show()
 
