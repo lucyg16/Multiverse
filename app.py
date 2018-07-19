@@ -107,7 +107,8 @@ for rowid in range(n):
             axs[rowid][colid].set_ylabel("Col " + str(colid))
             axs[rowid][colid].set_zlabel("Vector")
 
-
+        else:
+            fig.delaxes(axs[rowid][colid])
 
 plt.suptitle("Multiverse")
 plt.show()
