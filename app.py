@@ -101,6 +101,7 @@ for rowid in range(n):
             axs[rowid][colid].set_ylabel("Col " + str(colid))
             axs[rowid][colid].set_zlabel("Vector")
 
+plt.suptitle("Multiverse")
 plt.show()
 
 
